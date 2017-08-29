@@ -6,6 +6,7 @@ Game::Game()
 {
 	auto &entity = m_entityManager.addEntity();
 	entity.addComponent<PositionComponent>();
+	m_doc.parseFromFile("desert.tmx");
 }
 
 

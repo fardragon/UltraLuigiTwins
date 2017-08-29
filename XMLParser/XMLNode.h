@@ -9,9 +9,11 @@
 class XMLNode
 {
 public:
-	XMLNode();
-	~XMLNode();
+	XMLNode(const std::string &name);
 	XMLAttrib operator[](const std::string &index) const;
+	XMLNode *const addChild(const std::string &name);
+	void addAttrib(const std::string &key, const std::string &value);
+	std::string getName();
 
 private:
 	std::string m_name;

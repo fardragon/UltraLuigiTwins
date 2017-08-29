@@ -1,21 +1,28 @@
 #ifndef XMLDoc_h__
 #define XMLDoc_h__
 #include <string>
-#include "XMLNode.h"
 #include <memory>
+#include <iostream>
+#include <fstream>
+#include <tuple>
+#include "XMLNode.h"
+#include "XMLBuilder.h"
 
-class XMLDoc
+
+
+class __declspec(dllexport) XMLDoc
 {
 public:
 	XMLDoc();
-	~XMLDoc();
-	bool parse(const std::string &filepath);
+	bool parseFromFile(const std::string &filepath);
+	bool parseFromString(std::string data);
+	void clear();
 
 private:
 	std::string m_xmlVersion;
 	std::string m_encoding;
 
-	std::unique_ptr<XMLNode> rootNode;
+	std::unique_ptr<XMLNode> m_rootNode;
 
 
 };

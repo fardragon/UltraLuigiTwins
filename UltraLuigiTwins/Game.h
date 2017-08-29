@@ -2,6 +2,7 @@
 #define Game_h__
 
 #include "ECS/EntityManager.h"
+#include <XMLParser/XMLdoc.h>
 #include "Window.h"
 
 class Game
@@ -12,6 +13,7 @@ public:
 	void start();
 
 private:
+	XMLDoc m_doc;
 	EntityManager m_entityManager;
 	Window m_window;
 
